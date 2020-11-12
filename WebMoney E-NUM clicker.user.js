@@ -1,17 +1,20 @@
 // ==UserScript==
 // @name         WebMoney E-NUM clicker
 // @namespace    http://tampermonkey.net/
-// @version      0.4
+// @version      0.5
 // @description  Вводит WMId и пароль на WebMoney
 // @author       Andronio
 // @homepage     https://github.com/Andronio2/Aliexpress-webmoney-ENUM-clicker/
 // @supportURL   https://github.com/Andronio2/Aliexpress-webmoney-ENUM-clicker/issues
 // @updateURL    https://github.com/Andronio2/Aliexpress-webmoney-ENUM-clicker/blob/main/WebMoney%20E-NUM%20clicker.user.js
 // @downloadURL  https://github.com/Andronio2/Aliexpress-webmoney-ENUM-clicker/blob/main/WebMoney%20E-NUM%20clicker.user.js
+// @match        https://merchant.web.money/lmi/payment_conf.asp
+// @match        https://merchant.web.money/lmi/SignedLoginFormNewWC.asp*
+// @match        https://merchant.web.money/lmi/payment_do.asp
 // @match        https://merchant.wmtransfer.com/lmi/payment_conf.asp
 // @match        https://merchant.wmtransfer.com/lmi/SignedLoginFormNewWC.asp*
-// @match        https://psp.wmtransfer.com/payment/process/*
 // @match        https://merchant.wmtransfer.com/lmi/payment_do.asp
+// @match        https://psp.wmtransfer.com/payment/process/*
 // @match        https://shoppingcart.aliexpress.com/order/payResult.htm?cashierRequestNo*
 // @grant        none
 // ==/UserScript==
@@ -31,7 +34,7 @@ let wmPassVal = "000000000";
  ********************/
 
     let href = window.location.href;
-    if (href.startsWith("https://merchant.wmtransfer.com/lmi/payment_conf.asp")) {
+    if (href.startsWith("https://merchant.wmtransfer.com/lmi/payment_conf.asp") || href.startsWith("https://merchant.web.money/lmi/payment_conf.asp")) {
         let enumCode = document.getElementById("ConfirmENum");
         let confirmButton = document.getElementById("do_payment");
         let askENUM = document.getElementById("ConfirmENumSend");
@@ -60,7 +63,7 @@ let wmPassVal = "000000000";
             }
         }
     }
-    if (href.startsWith("https://merchant.wmtransfer.com/lmi/SignedLoginFormNewWC.asp")) {
+    if (href.startsWith("https://merchant.wmtransfer.com/lmi/SignedLoginFormNewWC.asp") || href.startsWith("https://merchant.web.money/lmi/SignedLoginFormNewWC.asp")) {
         let wmId = document.getElementById("wmcheck_no");
         let wmPass = document.getElementById("wmcheck_pwd");
         let wmCapt = document.getElementById("mobilecaptcha");
@@ -87,7 +90,7 @@ let wmPassVal = "000000000";
             setTimeout(repeat, 500);
         }
     }
-    if (href.startsWith("https://merchant.wmtransfer.com/lmi/payment_do.asp")) {
+    if (href.startsWith("https://merchant.wmtransfer.com/lmi/payment_do.asp") || href.startsWith("https://merchant.web.money/lmi/payment_do.asp")) {
         let backButton = document.getElementById("back_toshop");
         if (backButton) {
             backButton.click();
