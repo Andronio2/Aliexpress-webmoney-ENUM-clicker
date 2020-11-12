@@ -4,6 +4,10 @@
 // @version      0.4
 // @description  Вводит WMId и пароль на WebMoney
 // @author       Andronio
+// @homepage     https://github.com/Andronio2/Aliexpress-webmoney-ENUM-clicker/
+// @supportURL   https://github.com/Andronio2/Aliexpress-webmoney-ENUM-clicker/issues
+// @updateURL    https://github.com/Andronio2/Aliexpress-webmoney-ENUM-clicker/blob/main/WebMoney%20E-NUM%20clicker.user.js
+// @downloadURL  https://github.com/Andronio2/Aliexpress-webmoney-ENUM-clicker/blob/main/WebMoney%20E-NUM%20clicker.user.js
 // @match        https://merchant.wmtransfer.com/lmi/payment_conf.asp
 // @match        https://merchant.wmtransfer.com/lmi/SignedLoginFormNewWC.asp*
 // @match        https://psp.wmtransfer.com/payment/process/*
