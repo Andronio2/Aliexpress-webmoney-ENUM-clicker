@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         WebMoney E-NUM clicker
 // @namespace    http://tampermonkey.net/
-// @version      0.5
+// @version      0.6
 // @description  Вводит WMId и пароль на WebMoney
 // @author       Andronio
 // @homepage     https://github.com/Andronio2/Aliexpress-webmoney-ENUM-clicker/
@@ -15,6 +15,7 @@
 // @match        https://merchant.wmtransfer.com/lmi/SignedLoginFormNewWC.asp*
 // @match        https://merchant.wmtransfer.com/lmi/payment_do.asp
 // @match        https://psp.wmtransfer.com/payment/process/*
+// @match        https://psp.web.money/payment/process/*
 // @match        https://shoppingcart.aliexpress.com/order/payResult.htm?cashierRequestNo*
 // @grant        none
 // ==/UserScript==
@@ -51,7 +52,7 @@ let wmPassVal = "000000000";
             }
         }
     }
-    if (href.startsWith("https://psp.wmtransfer.com/payment/process/")) {
+    if (href.startsWith("https://psp.wmtransfer.com/payment/process/") || href.startsWith("https://psp.web.money/payment/process/")) {
         let returnButton = document.getElementById("returnToMerchant");
         if (!returnButton) {
             setTimeout(repeat, 500);
