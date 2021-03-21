@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         WebMoney E-NUM clicker
 // @namespace    http://tampermonkey.net/
-// @version      0.6
+// @version      0.7
 // @description  Вводит WMId и пароль на WebMoney
 // @author       Andronio
 // @homepage     https://github.com/Andronio2/Aliexpress-webmoney-ENUM-clicker/
@@ -16,7 +16,7 @@
 // @match        https://merchant.wmtransfer.com/lmi/payment_do.asp
 // @match        https://psp.wmtransfer.com/payment/process/*
 // @match        https://psp.web.money/payment/process/*
-// @match        https://shoppingcart.aliexpress.com/order/payResult.htm?cashierRequestNo*
+// @match        https://shoppingcart.aliexpress.com/order/payResult.htm?*
 // @grant        none
 // ==/UserScript==
 (function repeat() {
